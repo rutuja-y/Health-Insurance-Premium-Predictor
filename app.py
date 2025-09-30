@@ -1,11 +1,14 @@
+import os
 import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
 
 # ----------------- Load Model and Data -----------------
-model = pickle.load(open("model.pkl", "rb"))
-df = pd.read_csv("../../datasets/Health_insurance.csv")
+BASE_DIR = os.path.dirname(__file__)
+
+model_path = os.path.join(BASE_DIR, "model.pkl")
+data_path = os.path.join(BASE_DIR, "datasets", "Health_insurance.csv")
 
 # ----------------- Initialize Session State -----------------
 if "age" not in st.session_state: st.session_state.age = 30
@@ -152,3 +155,4 @@ if st.session_state.premium_inr:
 # 4. Personalized Suggestions
 st.sidebar.markdown("### 💡 Personalized Suggestions")
 st.sidebar.write(st.session_state.health_suggestion)
+
