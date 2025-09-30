@@ -2,7 +2,7 @@ streamlit>=1.18
 pandas
 numpy
 scikit-learn
-pickle5
+
 
 
 
