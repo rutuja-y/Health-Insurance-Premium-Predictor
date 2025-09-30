@@ -57,8 +57,8 @@ Predict your health insurance premium in INR based on age, BMI, smoking, and lif
 
 ---
 
-## 💻 Getting Started
-
-1. **Install dependencies**:  
+### Run locally
 ```bash
 pip install -r requirements.txt
+streamlit run app.py
+
