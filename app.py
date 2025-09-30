@@ -15,7 +15,7 @@ with open(model_path, "rb") as f:
     model = pickle.load(f)
 
 # Load dataset
-data_path = os.path.join(BASE_DIR, "datasets", "Health_insurance.csv")
+data_path = os.path.join(BASE_DIR,"Health_insurance.csv")
 df = pd.read_csv(data_path)
 
 # ----------------- Initialize Session State -----------------
@@ -163,6 +163,7 @@ if st.session_state.premium_inr:
 # 4. Personalized Suggestions
 st.sidebar.markdown("### 💡 Personalized Suggestions")
 st.sidebar.write(st.session_state.health_suggestion)
+
 
 
 
