@@ -10,6 +10,10 @@ BASE_DIR = os.path.dirname(__file__)
 model_path = os.path.join(BASE_DIR, "model.pkl")
 data_path = os.path.join(BASE_DIR, "datasets", "Health_insurance.csv")
 
+# Load the trained model
+with open(model_path, "rb") as f:
+    model = pickle.load(f)
+
 # ----------------- Initialize Session State -----------------
 if "age" not in st.session_state: st.session_state.age = 30
 if "sex" not in st.session_state: st.session_state.sex = "Male"
@@ -155,4 +159,5 @@ if st.session_state.premium_inr:
 # 4. Personalized Suggestions
 st.sidebar.markdown("### 💡 Personalized Suggestions")
 st.sidebar.write(st.session_state.health_suggestion)
+
 
